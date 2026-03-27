@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerRigidbody;
     private Animator animator;
 
+    private List<Collider2D> groundColliders = new List<Collider2D>();
+
     private void Awake()
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
@@ -34,10 +37,15 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        groundColliders.RemoveAll(c => c == null);
+        isGrounded = groundColliders.Count > 0;
+
         if (isDead)
         {
             return;
         }
+
+        isGrounded = groundColliders.Count > 0;
 
         if (!isSliding && Input.GetButtonDown("Slide") && isGrounded)
         {
@@ -58,7 +66,7 @@ public class PlayerController : MonoBehaviour
                 playerRigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
             }
-            else if (Input.GetButtonUp("Fire1") &&
+            else if (Input.GetButtonUp("Jump") &&
                 playerRigidbody.linearVelocity.y > 0)
             {
                 playerRigidbody.linearVelocity *= 0.5f;
@@ -74,7 +82,10 @@ public class PlayerController : MonoBehaviour
         if (collision.collider.CompareTag("Platform") &&
             collision.contacts[0].normal.y > 0.7f)
         {
-            isGrounded = true;
+            if (!groundColliders.Contains(collision.collider))
+            {
+                groundColliders.Add(collision.collider);
+            }
             jumpCount = 0;
 
         }
@@ -84,7 +95,10 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.collider.CompareTag("Platform"))
         {
-            isGrounded = false;
+            if (groundColliders.Contains(collision.collider))
+            {
+                groundColliders.Remove(collision.collider);
+            }
         }
     }
 

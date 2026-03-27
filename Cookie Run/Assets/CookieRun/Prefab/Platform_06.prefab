@@ -156,8 +156,8 @@ Transform:
   m_GameObject: {fileID: 3479396153546656883}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.2299995, y: 1.89, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 6.2299995, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6730467458550215816}
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 6730467458550215816}
   - component: {fileID: 5516819539207052997}
   - component: {fileID: 6502144171630439447}
-  - component: {fileID: 5226721291426305682}
+  - component: {fileID: -3222183171054066493}
   m_Layer: 0
   m_Name: Platform_06
   m_TagString: Platform
@@ -400,7 +400,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 16, y: 2}
   m_EdgeRadius: 0
---- !u!114 &5226721291426305682
+--- !u!114 &-3222183171054066493
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -413,6 +413,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScrolingObject
   speed: 5
+  deactivateX: -20
+  cycleLength: 100
 --- !u!1 &7298884948700982894
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,8 +442,8 @@ Transform:
   m_GameObject: {fileID: 7298884948700982894}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6000004, y: 1.89, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.6000004, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6730467458550215816}

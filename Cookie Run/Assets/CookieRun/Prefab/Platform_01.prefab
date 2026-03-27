@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4758342813678666726}
   - component: {fileID: 9012406914372511673}
   - component: {fileID: 3804734939691176328}
-  - component: {fileID: 2559942155754417252}
+  - component: {fileID: 2122163059504566712}
   m_Layer: 0
   m_Name: Platform_01
   m_TagString: Platform
@@ -143,7 +143,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 16, y: 2}
   m_EdgeRadius: 0
---- !u!114 &2559942155754417252
+--- !u!114 &2122163059504566712
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,6 +156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScrolingObject
   speed: 5
+  deactivateX: -20
+  cycleLength: 100
 --- !u!1 &1816762607182433287
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,15 +240,15 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -4119655120671059145, guid: 748717e450a19b54fb4d0d44835261a0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 748717e450a19b54fb4d0d44835261a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.24, y: 1.14}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
 --- !u!58 &354587338205719859
 CircleCollider2D:
@@ -366,15 +368,15 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -4119655120671059145, guid: 748717e450a19b54fb4d0d44835261a0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 748717e450a19b54fb4d0d44835261a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.24, y: 1.14}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
 --- !u!58 &7053468065881147263
 CircleCollider2D:
@@ -494,15 +496,15 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -4119655120671059145, guid: 748717e450a19b54fb4d0d44835261a0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 748717e450a19b54fb4d0d44835261a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.24, y: 1.14}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
 --- !u!58 &4848202862068007245
 CircleCollider2D:
@@ -622,15 +624,15 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -4119655120671059145, guid: 748717e450a19b54fb4d0d44835261a0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 748717e450a19b54fb4d0d44835261a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.24, y: 1.14}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
 --- !u!58 &3862081879622546238
 CircleCollider2D:

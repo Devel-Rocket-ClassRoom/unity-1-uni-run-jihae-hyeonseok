@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 3986271101695095785}
   - component: {fileID: 696411928582154660}
   - component: {fileID: 3723789548189601018}
-  - component: {fileID: 1956398491684326983}
+  - component: {fileID: 6696764901937428354}
   m_Layer: 0
   m_Name: Platform_05
   m_TagString: Platform
@@ -399,7 +399,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 16, y: 2}
   m_EdgeRadius: 0
---- !u!114 &1956398491684326983
+--- !u!114 &6696764901937428354
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -412,3 +412,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScrolingObject
   speed: 5
+  deactivateX: -20
+  cycleLength: 100

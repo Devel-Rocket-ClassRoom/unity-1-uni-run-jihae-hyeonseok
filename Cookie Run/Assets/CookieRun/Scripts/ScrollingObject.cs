@@ -1,27 +1,29 @@
 using UnityEngine;
 
-public class ScrolingObject : MonoBehaviour
+public class ScrollingObject : MonoBehaviour
 {
-    public float speed = 5f;
+    private float speed = 5f;
+    private float deactivateX = -20f;
+
+    [HideInInspector] public float cycleLength;
 
     private GameManager gameManager;
 
-    void Start()
+    private void Awake()
     {
         gameManager = FindAnyObjectByType<GameManager>();
     }
 
-
-    void Update()
+    private void Update()
     {
         if (gameManager != null && gameManager.IsGameOver)
             return;
 
-        transform.Translate(Vector3.left * speed * Time.deltaTime, Space.World );
+        transform.Translate(Vector3.left * speed * Time.deltaTime, Space.World);
 
-        if (transform.position.x < -25f)
+        if (transform.position.x < deactivateX)
         {
-            gameObject.SetActive(false);
+            transform.position += new Vector3(cycleLength, 0f, 0f);
         }
     }
 }
