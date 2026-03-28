@@ -7,6 +7,7 @@ TagManager:
   - Dead
   - Platform
   - Coin
+  - Obstacle
   layers:
   - Default
   - TransparentFX

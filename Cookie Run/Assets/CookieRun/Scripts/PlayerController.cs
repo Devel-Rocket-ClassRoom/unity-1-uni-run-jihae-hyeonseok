@@ -109,9 +109,16 @@ public class PlayerController : MonoBehaviour
             Die();
         }
 
+        if (collision.CompareTag("Obstacle"))
+        {
+            gameManager.DecreaseHP(30f);
+            collision.gameObject.SetActive(false);
+        }
+
         if (collision.CompareTag("Coin"))
         {
-            Destroy(collision.gameObject);
+            gameManager.AddHP(10f);
+            collision.gameObject.SetActive(false);
         }
     }
 
@@ -129,6 +136,14 @@ public class PlayerController : MonoBehaviour
         playerCollider.offset = colliderOffset;
 
         gameManager.OnPlayerDead();
+    }
+
+    public void DieFromHp()
+    {
+        if (isDead)
+            return;
+
+        Die();
     }
 
     private void StartSlide()

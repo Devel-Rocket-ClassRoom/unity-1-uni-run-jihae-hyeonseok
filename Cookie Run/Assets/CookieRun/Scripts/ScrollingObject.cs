@@ -24,6 +24,19 @@ public class ScrollingObject : MonoBehaviour
         if (transform.position.x < deactivateX)
         {
             transform.position += new Vector3(cycleLength, 0f, 0f);
+            ResetChildren();
+        }
+    }
+
+    private void ResetChildren()
+    {
+        Transform[] childeren = GetComponentsInChildren<Transform>(true);
+
+        foreach (Transform child  in childeren)
+        {
+            if (child == transform) continue;
+
+            child.gameObject.SetActive(true);
         }
     }
 }

@@ -7,13 +7,14 @@ public class PlatformSpawner : MonoBehaviour
     private float startX = 0f;
     private float groundY = -1f;
 
+    private float basePlatformWidth = 16f; // 긴 플랫폼 기준 길이
+
     private GameObject[] spawnedPlatforms;
 
     private void Start()
     {
         if (platformPrefabs == null || platformPrefabs.Length == 0)
         {
-            Debug.LogError("Platform Prefabs가 비어 있습니다.");
             return;
         }
 
@@ -29,14 +30,15 @@ public class PlatformSpawner : MonoBehaviour
 
             GameObject platform = Instantiate(prefab);
 
-            float width = GetWidth(platform);
-            float centerX = nextX + width * 0.5f;
+            float actualWidth = GetWidth(platform);
+            float centerX = nextX + actualWidth * 0.5f;
 
             platform.transform.position = new Vector3(centerX, groundY, 0f);
             spawnedPlatforms[i] = platform;
 
-            nextX += width;
-            totalLength += width;
+            // 다음 플랫폼은 항상 "기준 길이"만큼 이동
+            nextX += basePlatformWidth;
+            totalLength += basePlatformWidth;
         }
 
         for (int i = 0; i < spawnedPlatforms.Length; i++)
